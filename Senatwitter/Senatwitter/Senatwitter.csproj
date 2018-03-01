@@ -75,9 +75,9 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="App_Data\SenatwitterDB.mdf" />
-    <Content Include="App_Data\SenatwitterDB_log.ldf">
-      <DependentUpon>SenatwitterDB.mdf</DependentUpon>
+    <Content Include="App_Data\Senatwitter.mdf" />
+    <Content Include="App_Data\Senatwitter_log.ldf">
+      <DependentUpon>Senatwitter.mdf</DependentUpon>
     </Content>
     <Content Include="images\senatwitter.png" />
     <Content Include="Web.config" />
