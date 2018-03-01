@@ -75,16 +75,32 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="AdminPage.aspx" />
     <Content Include="App_Data\Senatwitter.mdf" />
     <Content Include="App_Data\Senatwitter_log.ldf">
       <DependentUpon>Senatwitter.mdf</DependentUpon>
     </Content>
     <Content Include="images\senatwitter.png" />
+    <Content Include="InsertPolitician.aspx" />
     <Content Include="Web.config" />
     <Content Include="HomePage.aspx" />
     <Content Include="PoliticianInfo.aspx" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AdminPage.aspx.cs">
+      <DependentUpon>AdminPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AdminPage.aspx.designer.cs">
+      <DependentUpon>AdminPage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="InsertPolitician.aspx.cs">
+      <DependentUpon>InsertPolitician.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="InsertPolitician.aspx.designer.cs">
+      <DependentUpon>InsertPolitician.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="HomePage.aspx.cs">
       <DependentUpon>HomePage.aspx</DependentUpon>
