@@ -27,3 +27,5 @@ C:\Users\glahman1\Documents\Github\Senatwitter\Senatwitter\obj\Debug\Senatwitter
 C:\Users\glahman1\Documents\Github\Senatwitter\Senatwitter\obj\Debug\Senatwitter.pdb
 C:\Users\glahman1\Documents\Github\Senatwitter\Senatwitter\bin\AspNet.ScriptManager.bootstrap.dll
 C:\Users\glahman1\Documents\Github\Senatwitter\Senatwitter\bin\AspNet.ScriptManager.jQuery.dll
+C:\Users\Irene Fransiga\Documents\TCSS445\Senatwitter\Senatwitter\Senatwitter\bin\AspNet.ScriptManager.bootstrap.dll
+C:\Users\Irene Fransiga\Documents\TCSS445\Senatwitter\Senatwitter\Senatwitter\bin\AspNet.ScriptManager.jQuery.dll

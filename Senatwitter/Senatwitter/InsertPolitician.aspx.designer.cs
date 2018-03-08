@@ -31,6 +31,15 @@ namespace Senatwitter {
         protected global::System.Web.UI.WebControls.TextBox fname;
         
         /// <summary>
+        /// fnameErr control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label fnameErr;
+        
+        /// <summary>
         /// lname control.
         /// </summary>
         /// <remarks>
@@ -38,6 +47,15 @@ namespace Senatwitter {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox lname;
+        
+        /// <summary>
+        /// lnameErr control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lnameErr;
         
         /// <summary>
         /// phone control.
@@ -49,6 +67,15 @@ namespace Senatwitter {
         protected global::System.Web.UI.WebControls.TextBox phone;
         
         /// <summary>
+        /// phoneErr control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label phoneErr;
+        
+        /// <summary>
         /// email control.
         /// </summary>
         /// <remarks>
@@ -56,6 +83,15 @@ namespace Senatwitter {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox email;
+        
+        /// <summary>
+        /// emailErr control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label emailErr;
         
         /// <summary>
         /// partyDrop control.
@@ -103,6 +139,15 @@ namespace Senatwitter {
         protected global::System.Web.UI.WebControls.TextBox termStart;
         
         /// <summary>
+        /// termStartErr control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label termStartErr;
+        
+        /// <summary>
         /// insertPol control.
         /// </summary>
         /// <remarks>
@@ -110,5 +155,23 @@ namespace Senatwitter {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button insertPol;
+        
+        /// <summary>
+        /// notification control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label notification;
+        
+        /// <summary>
+        /// logout control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button logout;
     }
 }

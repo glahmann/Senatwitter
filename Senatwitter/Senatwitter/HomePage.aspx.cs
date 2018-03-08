@@ -11,8 +11,21 @@ namespace Senatwitter
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            DropDownList1.SelectedValue = "LastName";
-            DropDownList2.SelectedValue = "FirstName";
+            //DropDownList1.SelectedValue = "LastName";
+            //DropDownList2.SelectedValue = "FirstName";
+        }
+        protected void HomeDataSource4_Selecting(object sender, SqlDataSourceSelectingEventArgs e)
+        {
+
+        }
+
+        protected void PolTwitter_Selecting(object sender, SqlDataSourceSelectingEventArgs e)
+        {
+        }
+
+        protected void fullname_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            
         }
     }
 }

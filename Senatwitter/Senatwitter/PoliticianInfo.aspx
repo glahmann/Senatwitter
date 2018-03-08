@@ -10,10 +10,10 @@
     <form id="form1" runat="server">
         <div>
             Select a state:
-            <asp:DropDownList ID="DropDownList1" runat="server">
+            <asp:DropDownList ID="stateDrop" runat="server" OnSelectedIndexChanged="stateDrop_SelectedIndexChanged">
             </asp:DropDownList>
 &nbsp; Select a senator:
-            <asp:DropDownList ID="DropDownList2" runat="server">
+            <asp:DropDownList ID="senatorDrop" runat="server">
             </asp:DropDownList>
         </div>
     </form>
