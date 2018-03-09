@@ -32,12 +32,41 @@
             height: 356px;
         }
     </style>
+    <link href="Content/bootstrap.min.css" rel="stylesheet" />
 </head>
 <body>
     <form id="form1" runat="server">
-        <div class="auto-style5">
+        <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
+          <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+              </button>
+              <a class="navbar-brand" href="HomePage.aspx">Senatwitter</a>
+            </div>
 
-            <img alt="logo" class="auto-style6" src="images/senatwitter.png" /></div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+              <ul class="nav navbar-nav">
+                <li class="active"><a href="PoliticianInfo.aspx"> Politician Info -<span class="sr-only">(current)</span></a></li>
+                <li><a href="Funstats.aspx">- Fun Stats! -</a></li>
+              </ul>
+              <ul class="nav navbar-nav navbar-right">
+                <li class="dropdown">
+                  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">- Admin Only<span class="caret"></span></a>
+                  <ul class="dropdown-menu">
+                    <li><a href="AdminPage.aspx">Login</a></li>
+                  </ul>
+                </li>
+              </ul>
+            </div><!-- /.navbar-collapse -->
+        </div><!-- /.container-fluid -->
+        </nav>
+        <div class="auto-style5">
+            <br />
+            <br />
+<%--            <img alt="logo" class="auto-style6" src="images/senatwitter.png" /></div>--%>
         <div style="margin-top: 32px; width: 740px;">
             
             
@@ -45,7 +74,7 @@
             <br />
             <span class="auto-style2"><strong><em>HOTNESS</em></strong></span><br />
             <br />
-            <asp:GridView ID="GridView1" runat="server" AllowPaging="True" AllowSorting="True" AutoGenerateColumns="False" BackColor="White" BorderColor="#CC9966" BorderStyle="None" BorderWidth="1px" CellPadding="4" DataSourceID="SqlDataSource1" Height="233px" Width="173px">
+            <asp:GridView ID="GridView1" runat="server" AllowPaging="True" AllowSorting="True" AutoGenerateColumns="False" BackColor="White" BorderColor="#CC9966" BorderStyle="None" BorderWidth="1px" CellPadding="4" DataSourceID="SqlDataSource1" Height="233px" Width="173px" HorizontalAlign="Center">
                 <Columns>
                     <asp:BoundField DataField="HOTNESS" HeaderText="HOTNESS" SortExpression="HOTNESS" />
                     <asp:BoundField DataField="Fname" HeaderText="Fname" SortExpression="Fname" />
@@ -67,7 +96,7 @@
             <br />
             <span class="auto-style3"><strong><em>HUMOR</em></strong></span><br />
             <br />
-            <asp:GridView ID="GridView2" runat="server" AllowPaging="True" AllowSorting="True" AutoGenerateColumns="False" BackColor="White" BorderColor="#999999" BorderStyle="None" BorderWidth="1px" CellPadding="3" DataSourceID="SqlDataSource2" GridLines="Vertical" Width="167px">
+            <asp:GridView ID="GridView2" runat="server" AllowPaging="True" AllowSorting="True" AutoGenerateColumns="False" BackColor="White" BorderColor="#999999" BorderStyle="None" BorderWidth="1px" CellPadding="3" DataSourceID="SqlDataSource2" GridLines="Vertical" Width="167px" HorizontalAlign="Center">
                 <AlternatingRowStyle BackColor="Gainsboro" />
                 <Columns>
                     <asp:BoundField DataField="HUMOR" HeaderText="HUMOR" SortExpression="HUMOR" />
@@ -91,6 +120,8 @@
             <br />
             
         </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="Scripts/bootstrap.min.js"></script>
     </form>
     
 </body>

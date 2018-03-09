@@ -31,15 +31,6 @@ namespace Senatwitter {
         protected global::System.Web.UI.WebControls.DropDownList fullname;
         
         /// <summary>
-        /// PolTwitter control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.SqlDataSource PolTwitter;
-        
-        /// <summary>
         /// GridView1 control.
         /// </summary>
         /// <remarks>
@@ -47,14 +38,5 @@ namespace Senatwitter {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.GridView GridView1;
-        
-        /// <summary>
-        /// HomeDataSource4 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.SqlDataSource HomeDataSource4;
     }
 }

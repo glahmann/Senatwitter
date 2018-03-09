@@ -28,46 +28,38 @@
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
               <ul class="nav navbar-nav">
-                <li class="active"><a href="PoliticianInfo.aspx"> Politician Info <span class="sr-only">(current)</span></a></li>
-                <li><a href="Funstats.aspx"> Fun! </a></li>
+                <li class="active"><a href="PoliticianInfo.aspx"> Politician Info -<span class="sr-only">(current)</span></a></li>
+                <li><a href="Funstats.aspx">- Fun Stats! -</a></li>
               </ul>
               <ul class="nav navbar-nav navbar-right">
                 <li class="dropdown">
-                  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Admin Only<span class="caret"></span></a>
+                  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">- Admin Only<span class="caret"></span></a>
                   <ul class="dropdown-menu">
-                    <li><a href="AdminPage.aspx">Admin</a></li>
+                    <li><a href="AdminPage.aspx">Login</a></li>
                   </ul>
                 </li>
               </ul>
             </div><!-- /.navbar-collapse -->
         </div><!-- /.container-fluid -->
         </nav>
+
         <div class="auto-style1">
             <br />
             <br />
             <img src="images/senatwitter.png" alt="Logo" />
             <br />
-            <asp:DropDownList ID="fullname" runat="server" DataSourceID="PolTwitter" DataTextField="FullName" DataValueField="FullName" OnSelectedIndexChanged="fullname_SelectedIndexChanged">
+            <asp:DropDownList ID="fullname" AutoPostBack="true" runat="server">
             </asp:DropDownList>
-            <asp:SqlDataSource ID="PolTwitter" runat="server" ConnectionString="<%$ ConnectionStrings:Senatwitter %>" OnSelecting="PolTwitter_Selecting" SelectCommand="SELECT P.Fname + ' ' + P.Lname AS FullName FROM Politicians AS P INNER JOIN POLTWEETS AS PT ON P.PID = PT.PID"></asp:SqlDataSource>
+            <br />
             &nbsp;<br />
         </div>
         <div style="margin-left:auto;margin-right:auto;">
-            <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" DataSourceID="HomeDataSource4" BackColor="White" BorderColor="#CCCCCC" BorderStyle="None" BorderWidth="1px" CellPadding="4" ForeColor="Black" GridLines="Horizontal">
-                <Columns>
-                    <asp:BoundField DataField="TWEET" HeaderText="TWEET" SortExpression="TWEET" />
-                </Columns>
-                <FooterStyle BackColor="#CCCC99" ForeColor="Black" />
-                <HeaderStyle BackColor="#333333" Font-Bold="True" ForeColor="White" />
-                <PagerStyle BackColor="White" ForeColor="Black" HorizontalAlign="Right" />
-                <SelectedRowStyle BackColor="#CC3333" Font-Bold="True" ForeColor="White" />
-                <SortedAscendingCellStyle BackColor="#F7F7F7" />
-                <SortedAscendingHeaderStyle BackColor="#4B4B4B" />
-                <SortedDescendingCellStyle BackColor="#E5E5E5" />
-                <SortedDescendingHeaderStyle BackColor="#242121" />
+            <asp:GridView ID="GridView1" runat="server" BackColor="White" BorderColor="#CCCCCC" BorderStyle="None" BorderWidth="1px" CellPadding="4" ForeColor="Black" GridLines="Horizontal" HorizontalAlign="Center">
             </asp:GridView>
-            <asp:SqlDataSource ID="HomeDataSource4" runat="server" ConnectionString="<%$ ConnectionStrings:Senatwitter %>" SelectCommand="SELECT [TWEET] FROM [TWEETS] ORDER BY [POLTWEETID] DESC" OnSelecting="HomeDataSource4_Selecting"></asp:SqlDataSource>
+            <br />
         </div>
+    <script>window.jQuery || document.write('<script src="Scripts/jquery-3.3.1.slim.min.js"><\/script>')</script>
+    <script src="Scripts/popper.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script src="Scripts/bootstrap.min.js"></script>
     </form>

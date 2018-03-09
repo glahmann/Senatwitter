@@ -49,7 +49,7 @@ namespace Senatwitter
                     dt.Load(reader);
                     len = Convert.ToInt32(dt.Rows[0][0]);
                 }
-                sqlString = "insert into Politicians values (" + (len + 1) + ",'" + fname.Text + "','" + lname.Text + "','" + partyDrop.Text + "','" + stateDrop.Text + "','" + phone.Text + "','" + email.Text + "','" + termStart.Text + "')";
+                sqlString = "insert into Politicians values (" + (len + 1) + ",'" + fname.Text + "','" + lname.Text + "','" + partyDrop.Text + "','" + stateDrop.Text + "','" + phone.Text + "','" + email.Text + "','" + termStart.Text + "','')";
                 comm = new SqlCommand(sqlString, conn);
                 int success = comm.ExecuteNonQuery();
                 if (success == 0) //unsuccessful
