@@ -24,11 +24,22 @@
             font-size: x-large;
             color: #0000FF;
         }
+        .auto-style5 {
+            text-align: center;
+        }
+        .auto-style6 {
+            width: 843px;
+            height: 356px;
+        }
     </style>
 </head>
 <body>
     <form id="form1" runat="server">
+        <div class="auto-style5">
+
+            <img alt="logo" class="auto-style6" src="images/senatwitter.png" /></div>
         <div style="margin-top: 32px; width: 740px;">
+            
             
             <h6 class="auto-style1"><strong>RATINGS</strong></h6>
             <br />

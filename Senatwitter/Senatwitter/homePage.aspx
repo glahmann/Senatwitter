@@ -29,11 +29,11 @@
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
               <ul class="nav navbar-nav">
                 <li class="active"><a href="PoliticianInfo.aspx"> Politician Info <span class="sr-only">(current)</span></a></li>
-                <li><a href="#"> Fun! </a></li>
+                <li><a href="Funstats.aspx"> Fun! </a></li>
               </ul>
               <ul class="nav navbar-nav navbar-right">
                 <li class="dropdown">
-                  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Advanced <span class="caret"></span></a>
+                  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Admin Only<span class="caret"></span></a>
                   <ul class="dropdown-menu">
                     <li><a href="AdminPage.aspx">Admin</a></li>
                   </ul>
@@ -50,7 +50,7 @@
             <asp:DropDownList ID="fullname" runat="server" DataSourceID="PolTwitter" DataTextField="FullName" DataValueField="FullName" OnSelectedIndexChanged="fullname_SelectedIndexChanged">
             </asp:DropDownList>
             <asp:SqlDataSource ID="PolTwitter" runat="server" ConnectionString="<%$ ConnectionStrings:Senatwitter %>" OnSelecting="PolTwitter_Selecting" SelectCommand="SELECT P.Fname + ' ' + P.Lname AS FullName FROM Politicians AS P INNER JOIN POLTWEETS AS PT ON P.PID = PT.PID"></asp:SqlDataSource>
-            <br />
+            &nbsp;<br />
         </div>
         <div style="margin-left:auto;margin-right:auto;">
             <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" DataSourceID="HomeDataSource4" BackColor="White" BorderColor="#CCCCCC" BorderStyle="None" BorderWidth="1px" CellPadding="4" ForeColor="Black" GridLines="Horizontal">

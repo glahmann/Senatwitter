@@ -17,6 +17,7 @@
 </head>
 <body>
     <form id="form1" runat="server">
+        <div class="container-fluid">
         <h1 class="auto-style4">
             <img alt="logo" class="auto-style3" src="images/senatwitter.png" /></h1>
         <h1>
