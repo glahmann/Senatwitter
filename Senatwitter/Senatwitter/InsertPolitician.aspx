@@ -23,10 +23,40 @@
             text-align: right;
         }
     </style>
+    <link href="Content/bootstrap.min.css" rel="stylesheet" />
 </head>
 <body>
     <form id="form1" runat="server">
+        <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
+          <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+              </button>
+              <a class="navbar-brand" href="HomePage.aspx">Senatwitter</a>
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+              <ul class="nav navbar-nav">
+                <li class="active"><a href="PoliticianInfo.aspx"> Politician Info -<span class="sr-only">(current)</span></a></li>
+                <li><a href="Funstats.aspx">- Fun Stats! -</a></li>
+              </ul>
+              <ul class="nav navbar-nav navbar-right">
+                <li class="dropdown">
+                  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">- Admin Only<span class="caret"></span></a>
+                  <ul class="dropdown-menu">
+                    <li><a href="AdminPage.aspx">Login</a></li>
+                  </ul>
+                </li>
+              </ul>
+            </div><!-- /.navbar-collapse -->
+        </div><!-- /.container-fluid -->
+        </nav>
         <p class="auto-style4">
+            <br />
+            <br />
             <img alt="logo" class="auto-style3" src="images/senatwitter.png" /></p>
             <div class="auto-style2">
                 <span class="auto-style1"><strong>New Politician</strong></span><br />
@@ -74,6 +104,8 @@
         <p class="auto-style5">
             <asp:Button ID="logout" runat="server" OnClick="logout_Click" Text="Log Out" />
         </p>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="Scripts/bootstrap.min.js"></script>
     </form>
 </body>
 </html>
