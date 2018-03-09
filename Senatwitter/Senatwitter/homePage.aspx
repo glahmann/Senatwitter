@@ -52,29 +52,16 @@
             </asp:DropDownList>
             <asp:DropDownList ID="DropDownList2" runat="server" DataSourceID="HomeDataSource3" DataTextField="Fname" DataValueField="Fname">
             </asp:DropDownList>
+            <br />
             <asp:SqlDataSource ID="HomeDataSource3" runat="server" ConnectionString="<%$ ConnectionStrings:Senatwitter %>" SelectCommand="SELECT [Fname] FROM [Politicians]"></asp:SqlDataSource>
             <asp:SqlDataSource ID="HomeDataSource2" runat="server" ConnectionString="<%$ ConnectionStrings:Senatwitter %>" SelectCommand="SELECT [Lname] FROM [Politicians]"></asp:SqlDataSource>
             <br />
+            <asp:GridView ID="GridView1" runat="server" BackColor="White" BorderColor="#CCCCCC" BorderStyle="None" BorderWidth="1px" CellPadding="4" ForeColor="Black" GridLines="Horizontal" HorizontalAlign="Center">
+            </asp:GridView>
         </div>
         <asp:SqlDataSource ID="HomeDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:Senatwitter %>" SelectCommand="SELECT [PartyName] FROM [Party]"></asp:SqlDataSource>
-        <div style="margin-left:auto;margin-right:auto;">
-            <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" DataSourceID="HomeDataSource4" BackColor="White" BorderColor="#CCCCCC" BorderStyle="None" BorderWidth="1px" CellPadding="4" ForeColor="Black" GridLines="Horizontal">
-                <Columns>
-                    <asp:BoundField DataField="TWEET" HeaderText="TWEET" SortExpression="TWEET" />
-                </Columns>
-                <FooterStyle BackColor="#CCCC99" ForeColor="Black" />
-                <HeaderStyle BackColor="#333333" Font-Bold="True" ForeColor="White" />
-                <PagerStyle BackColor="White" ForeColor="Black" HorizontalAlign="Right" />
-                <SelectedRowStyle BackColor="#CC3333" Font-Bold="True" ForeColor="White" />
-                <SortedAscendingCellStyle BackColor="#F7F7F7" />
-                <SortedAscendingHeaderStyle BackColor="#4B4B4B" />
-                <SortedDescendingCellStyle BackColor="#E5E5E5" />
-                <SortedDescendingHeaderStyle BackColor="#242121" />
-            </asp:GridView>
-            <asp:SqlDataSource ID="HomeDataSource4" runat="server" ConnectionString="<%$ ConnectionStrings:Senatwitter %>" SelectCommand="SELECT [TWEET] FROM [TWEETS] ORDER BY [POLTWEETID] DESC"></asp:SqlDataSource>
-        </div>
-    </form>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script src="Scripts/bootstrap.min.js"></script>
-</body>
+    </form>
+    </body>
 </html>
