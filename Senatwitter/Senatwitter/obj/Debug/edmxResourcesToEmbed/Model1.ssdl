@@ -1,0 +1,225 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="SenatwitterModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Admins">
+    <Key>
+      <PropertyRef Name="Username" />
+    </Key>
+    <Property Name="Username" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Password" Type="nvarchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="COMMITTEES">
+    <Key>
+      <PropertyRef Name="CID" />
+    </Key>
+    <Property Name="CID" Type="int" Nullable="false" />
+    <Property Name="CNAME" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="ISTEMPORARY" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Party">
+    <Key>
+      <PropertyRef Name="PartyID" />
+    </Key>
+    <Property Name="PartyID" Type="nchar" MaxLength="1" Nullable="false" />
+    <Property Name="PartyName" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="POLCOMM">
+    <Key>
+      <PropertyRef Name="CID" />
+      <PropertyRef Name="PID" />
+    </Key>
+    <Property Name="CID" Type="int" Nullable="false" />
+    <Property Name="PID" Type="int" Nullable="false" />
+    <Property Name="ISCHAIRMAN" Type="int" Nullable="false" />
+    <Property Name="ISRANKINGMEMBER" Type="int" Nullable="false" />
+    <Property Name="STARTDATE" Type="date" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Politicians">
+    <Key>
+      <PropertyRef Name="PID" />
+    </Key>
+    <Property Name="PID" Type="int" Nullable="false" />
+    <Property Name="Fname" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Lname" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="PartyID" Type="nchar" MaxLength="1" Nullable="false" />
+    <Property Name="StateID" Type="nchar" MaxLength="2" Nullable="false" />
+    <Property Name="Phone" Type="nchar" MaxLength="12" />
+    <Property Name="Email" Type="nvarchar" MaxLength="50" />
+    <Property Name="TermStart" Type="date" Nullable="false" />
+  </EntityType>
+  <EntityType Name="POLTWEETS">
+    <Key>
+      <PropertyRef Name="POLTWEETID" />
+    </Key>
+    <Property Name="POLTWEETID" Type="int" Nullable="false" />
+    <Property Name="PID" Type="int" Nullable="false" />
+    <Property Name="TWITTERID" Type="varchar" MaxLength="20" />
+  </EntityType>
+  <EntityType Name="State">
+    <Key>
+      <PropertyRef Name="StateID" />
+    </Key>
+    <Property Name="StateID" Type="nchar" MaxLength="2" Nullable="false" />
+    <Property Name="StateName" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="MajorityParty" Type="nchar" MaxLength="1" Nullable="false" />
+  </EntityType>
+  <EntityType Name="STATS">
+    <Key>
+      <PropertyRef Name="PID" />
+    </Key>
+    <Property Name="PID" Type="int" Nullable="false" />
+    <Property Name="HOTNESS" Type="int" Nullable="false" />
+    <Property Name="APPROVAL" Type="decimal" Precision="4" Scale="2" Nullable="false" />
+    <Property Name="WEALTH" Type="int" Nullable="false" />
+    <Property Name="HUMOR" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="TWEETS">
+    <Key>
+      <PropertyRef Name="POLTWEETID" />
+    </Key>
+    <Property Name="POLTWEETID" Type="int" Nullable="false" />
+    <Property Name="TWEET" Type="varchar" MaxLength="140" Nullable="false" />
+    <Property Name="ISRETWEET" Type="int" Nullable="false" />
+    <Property Name="HASHASHTAG" Type="int" Nullable="false" />
+  </EntityType>
+  <Association Name="FK__POLCOMM__CID__46E78A0C">
+    <End Role="COMMITTEES" Type="Self.COMMITTEES" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="POLCOMM" Type="Self.POLCOMM" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="COMMITTEES">
+        <PropertyRef Name="CID" />
+      </Principal>
+      <Dependent Role="POLCOMM">
+        <PropertyRef Name="CID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__POLCOMM__PID__47DBAE45">
+    <End Role="Politicians" Type="Self.Politicians" Multiplicity="1" />
+    <End Role="POLCOMM" Type="Self.POLCOMM" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Politicians">
+        <PropertyRef Name="PID" />
+      </Principal>
+      <Dependent Role="POLCOMM">
+        <PropertyRef Name="PID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__POLTWEETS__PID__36B12243">
+    <End Role="Politicians" Type="Self.Politicians" Multiplicity="1" />
+    <End Role="POLTWEETS" Type="Self.POLTWEETS" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Politicians">
+        <PropertyRef Name="PID" />
+      </Principal>
+      <Dependent Role="POLTWEETS">
+        <PropertyRef Name="PID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__STATS__PID__398D8EEE">
+    <End Role="Politicians" Type="Self.Politicians" Multiplicity="1" />
+    <End Role="STATS" Type="Self.STATS" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="Politicians">
+        <PropertyRef Name="PID" />
+      </Principal>
+      <Dependent Role="STATS">
+        <PropertyRef Name="PID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__TWEETS__POLTWEET__3E52440B">
+    <End Role="POLTWEETS" Type="Self.POLTWEETS" Multiplicity="1" />
+    <End Role="TWEETS" Type="Self.TWEETS" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="POLTWEETS">
+        <PropertyRef Name="POLTWEETID" />
+      </Principal>
+      <Dependent Role="TWEETS">
+        <PropertyRef Name="POLTWEETID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Politicians_ToParty">
+    <End Role="Party" Type="Self.Party" Multiplicity="1" />
+    <End Role="Politicians" Type="Self.Politicians" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Party">
+        <PropertyRef Name="PartyID" />
+      </Principal>
+      <Dependent Role="Politicians">
+        <PropertyRef Name="PartyID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Politicians_ToState">
+    <End Role="State" Type="Self.State" Multiplicity="1" />
+    <End Role="Politicians" Type="Self.Politicians" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="State">
+        <PropertyRef Name="StateID" />
+      </Principal>
+      <Dependent Role="Politicians">
+        <PropertyRef Name="StateID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_State_ToParty">
+    <End Role="Party" Type="Self.Party" Multiplicity="1" />
+    <End Role="State" Type="Self.State" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Party">
+        <PropertyRef Name="PartyID" />
+      </Principal>
+      <Dependent Role="State">
+        <PropertyRef Name="MajorityParty" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="SenatwitterModelStoreContainer">
+    <EntitySet Name="Admins" EntityType="Self.Admins" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="COMMITTEES" EntityType="Self.COMMITTEES" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Party" EntityType="Self.Party" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="POLCOMM" EntityType="Self.POLCOMM" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Politicians" EntityType="Self.Politicians" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="POLTWEETS" EntityType="Self.POLTWEETS" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="State" EntityType="Self.State" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="STATS" EntityType="Self.STATS" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TWEETS" EntityType="Self.TWEETS" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK__POLCOMM__CID__46E78A0C" Association="Self.FK__POLCOMM__CID__46E78A0C">
+      <End Role="COMMITTEES" EntitySet="COMMITTEES" />
+      <End Role="POLCOMM" EntitySet="POLCOMM" />
+    </AssociationSet>
+    <AssociationSet Name="FK__POLCOMM__PID__47DBAE45" Association="Self.FK__POLCOMM__PID__47DBAE45">
+      <End Role="Politicians" EntitySet="Politicians" />
+      <End Role="POLCOMM" EntitySet="POLCOMM" />
+    </AssociationSet>
+    <AssociationSet Name="FK__POLTWEETS__PID__36B12243" Association="Self.FK__POLTWEETS__PID__36B12243">
+      <End Role="Politicians" EntitySet="Politicians" />
+      <End Role="POLTWEETS" EntitySet="POLTWEETS" />
+    </AssociationSet>
+    <AssociationSet Name="FK__STATS__PID__398D8EEE" Association="Self.FK__STATS__PID__398D8EEE">
+      <End Role="Politicians" EntitySet="Politicians" />
+      <End Role="STATS" EntitySet="STATS" />
+    </AssociationSet>
+    <AssociationSet Name="FK__TWEETS__POLTWEET__3E52440B" Association="Self.FK__TWEETS__POLTWEET__3E52440B">
+      <End Role="POLTWEETS" EntitySet="POLTWEETS" />
+      <End Role="TWEETS" EntitySet="TWEETS" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Politicians_ToParty" Association="Self.FK_Politicians_ToParty">
+      <End Role="Party" EntitySet="Party" />
+      <End Role="Politicians" EntitySet="Politicians" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Politicians_ToState" Association="Self.FK_Politicians_ToState">
+      <End Role="State" EntitySet="State" />
+      <End Role="Politicians" EntitySet="Politicians" />
+    </AssociationSet>
+    <AssociationSet Name="FK_State_ToParty" Association="Self.FK_State_ToParty">
+      <End Role="Party" EntitySet="Party" />
+      <End Role="State" EntitySet="State" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

@@ -1,0 +1,94 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="SenatwitterModelStoreContainer" CdmEntityContainer="SenatwitterEntities1">
+    <EntitySetMapping Name="Admins">
+      <EntityTypeMapping TypeName="SenatwitterModel.Admin">
+        <MappingFragment StoreEntitySet="Admins">
+          <ScalarProperty Name="Username" ColumnName="Username" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="COMMITTEES">
+      <EntityTypeMapping TypeName="SenatwitterModel.COMMITTEE">
+        <MappingFragment StoreEntitySet="COMMITTEES">
+          <ScalarProperty Name="CID" ColumnName="CID" />
+          <ScalarProperty Name="CNAME" ColumnName="CNAME" />
+          <ScalarProperty Name="ISTEMPORARY" ColumnName="ISTEMPORARY" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Parties">
+      <EntityTypeMapping TypeName="SenatwitterModel.Party">
+        <MappingFragment StoreEntitySet="Party">
+          <ScalarProperty Name="PartyID" ColumnName="PartyID" />
+          <ScalarProperty Name="PartyName" ColumnName="PartyName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="POLCOMMs">
+      <EntityTypeMapping TypeName="SenatwitterModel.POLCOMM">
+        <MappingFragment StoreEntitySet="POLCOMM">
+          <ScalarProperty Name="CID" ColumnName="CID" />
+          <ScalarProperty Name="PID" ColumnName="PID" />
+          <ScalarProperty Name="ISCHAIRMAN" ColumnName="ISCHAIRMAN" />
+          <ScalarProperty Name="ISRANKINGMEMBER" ColumnName="ISRANKINGMEMBER" />
+          <ScalarProperty Name="STARTDATE" ColumnName="STARTDATE" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Politicians">
+      <EntityTypeMapping TypeName="SenatwitterModel.Politician">
+        <MappingFragment StoreEntitySet="Politicians">
+          <ScalarProperty Name="PID" ColumnName="PID" />
+          <ScalarProperty Name="Fname" ColumnName="Fname" />
+          <ScalarProperty Name="Lname" ColumnName="Lname" />
+          <ScalarProperty Name="PartyID" ColumnName="PartyID" />
+          <ScalarProperty Name="StateID" ColumnName="StateID" />
+          <ScalarProperty Name="Phone" ColumnName="Phone" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="TermStart" ColumnName="TermStart" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="POLTWEETS">
+      <EntityTypeMapping TypeName="SenatwitterModel.POLTWEET">
+        <MappingFragment StoreEntitySet="POLTWEETS">
+          <ScalarProperty Name="POLTWEETID" ColumnName="POLTWEETID" />
+          <ScalarProperty Name="PID" ColumnName="PID" />
+          <ScalarProperty Name="TWITTERID" ColumnName="TWITTERID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="States">
+      <EntityTypeMapping TypeName="SenatwitterModel.State">
+        <MappingFragment StoreEntitySet="State">
+          <ScalarProperty Name="StateID" ColumnName="StateID" />
+          <ScalarProperty Name="StateName" ColumnName="StateName" />
+          <ScalarProperty Name="MajorityParty" ColumnName="MajorityParty" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="STATS">
+      <EntityTypeMapping TypeName="SenatwitterModel.STAT">
+        <MappingFragment StoreEntitySet="STATS">
+          <ScalarProperty Name="PID" ColumnName="PID" />
+          <ScalarProperty Name="HOTNESS" ColumnName="HOTNESS" />
+          <ScalarProperty Name="APPROVAL" ColumnName="APPROVAL" />
+          <ScalarProperty Name="WEALTH" ColumnName="WEALTH" />
+          <ScalarProperty Name="HUMOR" ColumnName="HUMOR" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TWEETS">
+      <EntityTypeMapping TypeName="SenatwitterModel.TWEET">
+        <MappingFragment StoreEntitySet="TWEETS">
+          <ScalarProperty Name="POLTWEETID" ColumnName="POLTWEETID" />
+          <ScalarProperty Name="TWEET1" ColumnName="TWEET" />
+          <ScalarProperty Name="ISRETWEET" ColumnName="ISRETWEET" />
+          <ScalarProperty Name="HASHASHTAG" ColumnName="HASHASHTAG" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>
