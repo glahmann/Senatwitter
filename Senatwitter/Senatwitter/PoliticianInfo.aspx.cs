@@ -13,5 +13,10 @@ namespace Senatwitter
         {
 
         }
+
+        protected void stateDrop_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

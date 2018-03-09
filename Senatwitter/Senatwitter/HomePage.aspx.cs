@@ -41,5 +41,18 @@ namespace Senatwitter
                 }  
             }
         }
+        protected void HomeDataSource4_Selecting(object sender, SqlDataSourceSelectingEventArgs e)
+        {
+
+        }
+
+        protected void PolTwitter_Selecting(object sender, SqlDataSourceSelectingEventArgs e)
+        {
+        }
+
+        protected void fullname_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

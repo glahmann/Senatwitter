@@ -74,6 +74,7 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="AccessDenied.aspx" />
     <Content Include="Content\bootstrap-grid.css" />
     <Content Include="Content\bootstrap-grid.min.css" />
     <Content Include="Content\bootstrap-reboot.css" />
@@ -86,8 +87,35 @@
     <Content Include="Content\bootstrap-reboot.css.map" />
     <Content Include="Content\bootstrap-grid.min.css.map" />
     <Content Include="Content\bootstrap-grid.css.map" />
+    <Content Include="Funstats.aspx" />
     <None Include="packages.config" />
     <Content Include="Global.asax" />
+    <Content Include="images\senators\blumenthal.jpg" />
+    <Content Include="images\senators\brown.jpg" />
+    <Content Include="images\senators\burr.jpg" />
+    <Content Include="images\senators\cantwell.jpg" />
+    <Content Include="images\senators\casey.jpg" />
+    <Content Include="images\senators\cochran.jpg" />
+    <Content Include="images\senators\collins.jpg" />
+    <Content Include="images\senators\cornyn.jpg" />
+    <Content Include="images\senators\cruz.jpg" />
+    <Content Include="images\senators\enzi.jpg" />
+    <Content Include="images\senators\Gillibrand.jpg" />
+    <Content Include="images\senators\grassley.jpg" />
+    <Content Include="images\senators\harris.jpg" />
+    <Content Include="images\senators\isakson.jpg" />
+    <Content Include="images\senators\markey.jpg" />
+    <Content Include="images\senators\mccain.jpg" />
+    <Content Include="images\senators\murkowski.jpg" />
+    <Content Include="images\senators\murray.jpg" />
+    <Content Include="images\senators\nelson.jpg" />
+    <Content Include="images\senators\portman.jpg" />
+    <Content Include="images\senators\roberts.jpg" />
+    <Content Include="images\senators\rubio.jpg" />
+    <Content Include="images\senators\sanders.jpg" />
+    <Content Include="images\senators\shelby.jpg" />
+    <Content Include="images\senators\thune.jpg" />
+    <Content Include="images\senators\warren.jpg" />
     <Content Include="Scripts\bootstrap.bundle.js" />
     <Content Include="Scripts\bootstrap.bundle.min.js" />
     <Content Include="Scripts\bootstrap.js" />
@@ -145,6 +173,13 @@
     <Content Include="PoliticianInfo.aspx" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AccessDenied.aspx.cs">
+      <DependentUpon>AccessDenied.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AccessDenied.aspx.designer.cs">
+      <DependentUpon>AccessDenied.aspx</DependentUpon>
+    </Compile>
     <Compile Include="AdminPage.aspx.cs">
       <DependentUpon>AdminPage.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -183,6 +218,13 @@
     </Compile>
     <Compile Include="Main.Master.designer.cs">
       <DependentUpon>Main.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Funstats.aspx.cs">
+      <DependentUpon>Funstats.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Funstats.aspx.designer.cs">
+      <DependentUpon>Funstats.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>

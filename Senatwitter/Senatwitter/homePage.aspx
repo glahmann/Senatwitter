@@ -29,14 +29,13 @@
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
               <ul class="nav navbar-nav">
                 <li class="active"><a href="PoliticianInfo.aspx"> Politician Info <span class="sr-only">(current)</span></a></li>
-                <li><a href="#"> Fun! </a></li>
+                <li><a href="Funstats.aspx"> Fun! </a></li>
               </ul>
               <ul class="nav navbar-nav navbar-right">
                 <li class="dropdown">
-                  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Advanced <span class="caret"></span></a>
+                  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Admin Only<span class="caret"></span></a>
                   <ul class="dropdown-menu">
                     <li><a href="AdminPage.aspx">Admin</a></li>
-                    <li><a href="InsertPolitician.aspx">Add Politician</a></li>
                   </ul>
                 </li>
               </ul>
@@ -48,18 +47,27 @@
             <br />
             <img src="images/senatwitter.png" alt="Logo" />
             <br />
-            <asp:DropDownList ID="DropDownList1" runat="server" DataSourceID="HomeDataSource2" DataTextField="Lname" DataValueField="Lname">
+            <asp:DropDownList ID="fullname" runat="server" DataSourceID="PolTwitter" DataTextField="FullName" DataValueField="FullName" OnSelectedIndexChanged="fullname_SelectedIndexChanged">
             </asp:DropDownList>
-            <asp:DropDownList ID="DropDownList2" runat="server" DataSourceID="HomeDataSource3" DataTextField="Fname" DataValueField="Fname">
-            </asp:DropDownList>
-            <br />
-            <asp:SqlDataSource ID="HomeDataSource3" runat="server" ConnectionString="<%$ ConnectionStrings:Senatwitter %>" SelectCommand="SELECT [Fname] FROM [Politicians]"></asp:SqlDataSource>
-            <asp:SqlDataSource ID="HomeDataSource2" runat="server" ConnectionString="<%$ ConnectionStrings:Senatwitter %>" SelectCommand="SELECT [Lname] FROM [Politicians]"></asp:SqlDataSource>
-            <br />
-            <asp:GridView ID="GridView1" runat="server" BackColor="White" BorderColor="#CCCCCC" BorderStyle="None" BorderWidth="1px" CellPadding="4" ForeColor="Black" GridLines="Horizontal" HorizontalAlign="Center">
-            </asp:GridView>
+            <asp:SqlDataSource ID="PolTwitter" runat="server" ConnectionString="<%$ ConnectionStrings:Senatwitter %>" OnSelecting="PolTwitter_Selecting" SelectCommand="SELECT P.Fname + ' ' + P.Lname AS FullName FROM Politicians AS P INNER JOIN POLTWEETS AS PT ON P.PID = PT.PID"></asp:SqlDataSource>
+            &nbsp;<br />
         </div>
-        <asp:SqlDataSource ID="HomeDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:Senatwitter %>" SelectCommand="SELECT [PartyName] FROM [Party]"></asp:SqlDataSource>
+        <div style="margin-left:auto;margin-right:auto;">
+            <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" DataSourceID="HomeDataSource4" BackColor="White" BorderColor="#CCCCCC" BorderStyle="None" BorderWidth="1px" CellPadding="4" ForeColor="Black" GridLines="Horizontal">
+                <Columns>
+                    <asp:BoundField DataField="TWEET" HeaderText="TWEET" SortExpression="TWEET" />
+                </Columns>
+                <FooterStyle BackColor="#CCCC99" ForeColor="Black" />
+                <HeaderStyle BackColor="#333333" Font-Bold="True" ForeColor="White" />
+                <PagerStyle BackColor="White" ForeColor="Black" HorizontalAlign="Right" />
+                <SelectedRowStyle BackColor="#CC3333" Font-Bold="True" ForeColor="White" />
+                <SortedAscendingCellStyle BackColor="#F7F7F7" />
+                <SortedAscendingHeaderStyle BackColor="#4B4B4B" />
+                <SortedDescendingCellStyle BackColor="#E5E5E5" />
+                <SortedDescendingHeaderStyle BackColor="#242121" />
+            </asp:GridView>
+            <asp:SqlDataSource ID="HomeDataSource4" runat="server" ConnectionString="<%$ ConnectionStrings:Senatwitter %>" SelectCommand="SELECT [TWEET] FROM [TWEETS] ORDER BY [POLTWEETID] DESC" OnSelecting="HomeDataSource4_Selecting"></asp:SqlDataSource>
+        </div>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script src="Scripts/bootstrap.min.js"></script>
     </form>
